@@ -1,0 +1,42 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "server",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-12-02",
+  "kv_namespaces": [
+    {
+      "binding": "EPAPER_IMAGES",
+      "id": "87fa823dfd2d48098671cdb815151ce2"
+    }
+  ],
+  "assets": {
+    "binding": "ASSETS",
+    "directory": "../client/dist"
+  }
+  // "compatibility_flags": [
+  //   "nodejs_compat"
+  // ],
+  // "vars": {
+  //   "MY_VAR": "my-variable"
+  // },
+  // "r2_buckets": [
+  //   {
+  //     "binding": "MY_BUCKET",
+  //     "bucket_name": "my-bucket"
+  //   }
+  // ],
+  // "d1_databases": [
+  //   {
+  //     "binding": "MY_DB",
+  //     "database_name": "my-database",
+  //     "database_id": ""
+  //   }
+  // ],
+  // "ai": {
+  //   "binding": "AI"
+  // },
+  // "observability": {
+  //   "enabled": true,
+  //   "head_sampling_rate": 1
+  // }
+}

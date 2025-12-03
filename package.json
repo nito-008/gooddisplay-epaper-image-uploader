@@ -1,0 +1,16 @@
+{
+  "name": "gooddisplay-epaper-image-uploader",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "bun run --filter server dev",
+    "devc": "bun run --filter client dev",
+    "build": "bun run --filter client build",
+    "deploy": "bun run build && bun run --filter server deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  }
+}
