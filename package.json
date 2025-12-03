@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "bun run --filter server dev",
     "devc": "bun run --filter client dev",
-    "build": "bun run --filter client build",
+    "buildc": "bun run --filter client build",
     "deploy": "bun run build && bun run --filter server deploy"
   },
   "devDependencies": {
