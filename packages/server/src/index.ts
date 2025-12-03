@@ -2,7 +2,7 @@ import { KVNamespace, Fetcher } from "@cloudflare/workers-types";
 import { Hono } from "hono";
 
 type Bindings = {
-  IMAGES: KVNamespace;
+  EPAPER_IMAGES: KVNamespace;
   ASSETS: Fetcher;
 };
 
@@ -27,7 +27,7 @@ app.post("/api/upload", async (c) => {
   const hashBuffer = await crypto.subtle.digest("SHA-1", body);
   const etag = `"${bufferToHex(hashBuffer)}"`;
 
-  await c.env.IMAGES.put("latest_binary", body, {
+  await c.env.EPAPER_IMAGES.put("latest_binary", body, {
     metadata: { etag },
   });
 
@@ -35,7 +35,7 @@ app.post("/api/upload", async (c) => {
 });
 
 app.get("/api/image", async (c) => {
-  const { value, metadata } = await c.env.IMAGES.getWithMetadata<{
+  const { value, metadata } = await c.env.EPAPER_IMAGES.getWithMetadata<{
     etag: string;
   }>("latest_binary", "arrayBuffer");
 
