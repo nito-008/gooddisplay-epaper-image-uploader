@@ -1,4 +1,4 @@
-import { KVNamespace, Fetcher, crypto } from "@cloudflare/workers-types";
+import { KVNamespace, Fetcher } from "@cloudflare/workers-types";
 import { Hono } from "hono";
 
 type Bindings = {
