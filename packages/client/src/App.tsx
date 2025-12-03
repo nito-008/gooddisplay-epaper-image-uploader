@@ -130,7 +130,7 @@ function App() {
     const packedData = new Uint8Array((w * h) / 8);
     for (let i = 0; i < w * h; i++) {
       const isWhite = data[i * 4] > 127;
-      if (isWhite) {
+      if (!isWhite) {
         packedData[Math.floor(i / 8)] |= 1 << (7 - (i % 8));
       }
     }
