@@ -178,6 +178,7 @@ function App() {
           disabled={isProcessing}
         />
         <div>
+          <p>Object Fit: </p>
           <select
             value={objectFit}
             onChange={(e) => setObjectFit(e.target.value as ObjectFitTypes)}
